@@ -1,14 +1,16 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.grade.vcl"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode gitVersionCode()
+        versionName currentName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
     }
     buildTypes {
         release {
@@ -25,4 +27,31 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // 阿里云推送
+    implementation 'com.aliyun.ams:alicloud-android-push:3.1.4'
+    implementation 'com.github.leapTrace:unit:0.2'
+}
+
+static def gitVersionCode() {
+    def cmd = 'git rev-list HEAD --first-parent --count'
+    cmd.execute().text.trim().toInteger()
+}
+
+static def gitVersionName() {
+    def cmd = 'git describe --tags'
+    def version = cmd.execute().text.trim()
+    def pattern = "-(\\d+)-g"
+    def matcher = version =~ pattern
+    if (matcher) {
+        version = version.substring(0, matcher.start())
+    }
+    return version
+}
+
+static def currentName() {
+    def versionName = gitVersionName()
+    if (versionName == null || versionName == "") {
+        return "debug." + gitVersionCode()
+    }
+    return versionName
 }

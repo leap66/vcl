@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引导列表</title>
+</head>
+<body>
+<div>
+    <div class="引导列表">
+        <ul>
+            <li><a href="#_0">Application</a></li>
+            <li><a href="#_1">基础模块</a></li>
+            <li><a href="#_2">认证模块</a></li>
+            <li><a href="#_3">主界面模块</a></li>
+            <li><a href="#_4">用户信息</a></li>
+            <li><a href="#_5">本机设置</a></li>
+            <li><a href="#_6">聊天模块</a></li>
+            <li><a href="#_7">好友模块</a></li>
+            <li><a href="#_8">通用模块</a></li>
+        </ul>
+    </div>
+    <div class="Application">
+        <h3 id="_0"><a name="content-_0" href="#_0"></a>Application</h3>
+        <ol>
+            <li>初始化 内存泄漏检测</li>
+            <li>初始化 基础组件</li>
+            <li>初始化 日志类组件</li>
+            <li>初始化 Token</li>
+            <li>初始化 语音合成组件</li>
+            <li>初始化 推送服务</li>
+            <li>初始化 NetWorkClient</li>
+            <li>初始化 UpdateMgr</li>
+            <li>初始化 Session</li>
+        </ol>
+    </div>
+    <div class="基础模块">
+        <h3 id="_1"><a name="content-_1" href="#_1" aria-hidden="true"></a>基础模块</h3>
+        <ul>
+            <li>
+                <div>
+                    <pre><code>基础界面</code></pre>
+                    <ol>
+                        <li>初始化组件</li>
+                        <li>初始化事件监听事件</li>
+                        <li>加载数据</li>
+                        <li>初始化沉浸式状态拦</li>
+                        <li>注册EventBus</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="认证模块">
+        <h3 id="_2"><a name="content-_2" href="#_2" aria-hidden="true"></a>认证模块</h3>
+        <ul>
+            <li class="欢迎界面">
+                <div>
+                    <pre><code>欢迎界面</code></pre>
+                    <ol>
+                        <li>根据物理缓存判断是否进入引导页界面</li>
+                        <li>根据Token物理缓存判断是否已登陆</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="引导页界面">
+                <div>
+                    <pre><code>引导页界面</code></pre>
+                    <ol>
+                        <li>三张引导图，截取聊天、语音控制、设置</li>
+                        <li>点击立即使用进入登录页</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="登录界面">
+                <div>
+                    <pre><code>登录界面</code></pre>
+                    <ol>
+                        <li>手机号为11位，密码6-16位</li>
+                        <li>密码可切换是否可见，默认不可见</li>
+                        <li>点击【登录】，网络请求成功后进入【主界面】</li>
+                        <li>点击【忘记密码】，进入【修改密码界面】</li>
+                        <li>点击【新用户注册】，进入【手机号效验界面】</li>
+                        <li>点击【QQ登录】，关联QQ并登录</li>
+                        <li>点击【微信登录】，关联微信并登录</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="手机号效验界面">
+                <div>
+                    <pre><code>手机号效验界面</code></pre>
+                    <ol>
+                        <li>输入11为手机号后，激活获取验证码按钮</li>
+                        <li>点击【获取验证码】，网络请求成功后，焦点切换到验证码输入框</li>
+                        <li>点击【下一步】，网络请求成功后，进入【注册界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="注册界面">
+                <div>
+                    <pre><code>注册界面</code></pre>
+                    <ol>
+                        <li>昵称输入1-12位</li>
+                        <li>密码输入6-16位</li>
+                        <li>点击【下一步】，网络请求成功后，调用退出事件</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="修改密码界面">
+                <div>
+                    <pre><code>修改密码界面</code></pre>
+                    <ol>
+                        <li>密码输入6-16位</li>
+                        <li>验证码输入6位</li>
+                        <li>点击【下一步】，网络请求成功后，调用退出事件</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="修改手机号界面">
+                <div>
+                    <pre><code>修改手机号界面</code></pre>
+                    <ol>
+                        <li>新手机号输入11位后，激活获取验证码按钮</li>
+                        <li>验证码输入6位</li>
+                        <li>点击【下一步】，网络请求成功后，调用退出事件</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="主界面模块">
+        <h3 id="_3"><a name="content-_3" href="#_3" aria-hidden="true"></a>主界面模块</h3>
+        <ul>
+            <li class="主界面">
+                <div>
+                    <pre><code>主界面</code></pre>
+                    <ol>
+                        <li>增加4个部分，记录、通讯录、发现、我的</li>
+                        <li>根据点击切换页面内容</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="记录">
+                <div>
+                    <pre><code>记录</code></pre>
+                    <ol>
+                        <li>点击【加号】可选择附属操作</li>
+                        <li>点击【搜索】，跳转至【搜索界面】</li>
+                        <li>点击【发起群聊】，跳转至【选择联系人界面】</li>
+                        <li>点击【添加好友】，跳转至【添加好友界面】</li>
+                        <li>点击【扫一扫】，跳转至【扫一扫界面】</li>
+                        <li>点击【记录项】，跳转至【聊天界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="通讯录">
+                <div>
+                    <pre><code>通讯录</code></pre>
+                    <ol>
+                        <li>点击【增加】，跳转至【添加好友界面】</li>
+                        <li>点击【搜索】，跳转至【搜索界面】</li>
+                        <li>点击【新的好友】，跳转至【最近好友界面】</li>
+                        <li>点击【群聊】，跳转至【群聊界面】</li>
+                        <li>点击【标签】，跳转至【标签界面】</li>
+                        <li>点击【好友项】，跳转至【好友资料界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="发现">
+                <div>
+                    <pre><code>发现</code></pre>
+                    <ol>
+                        <li>点击【朋友圈】，跳转至【朋友圈界面】</li>
+                        <li>点击【扫一扫】，跳转至【扫一扫界面】</li>
+                        <li>点击【摇一摇】，跳转至【摇一摇界面】</li>
+                        <li>点击【搜一搜】，跳转至【搜一搜界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="我的">
+                <div>
+                    <pre><code>我的</code></pre>
+                    <ol>
+                        <li>点击【用户信息】，跳转至【用户信息界面】</li>
+                        <li>点击【收藏】，跳转至【收藏界面】</li>
+                        <li>点击【相册】，跳转至【相册界面】</li>
+                        <li>点击【设置】，跳转至【设置界面】</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="用户信息">
+        <h3 id="_4"><a name="content-_4" href="#_4" aria-hidden="true"></a>用户信息</h3>
+        <ul>
+            <li class="用户信息">
+                <div>
+                    <pre><code>用户信息</code></pre>
+                    <ol>
+                        <li>点击【头像】，跳转至【头像界面】</li>
+                        <li>点击【名字】，跳转至【输入设置界面】</li>
+                        <li>点击【我的二维码】，跳转至【我的二维码界面】</li>
+                        <li>点击【更多】，跳转至【更多设置界面】</li>
+                        <li>点击【我的地址】，跳转至【我的地址界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="头像界面">
+                <div>
+                    <pre><code>头像界面</code></pre>
+                    <ol>
+                        <li>点击【更多】，可选择附属操作</li>
+                        <li>点击【拍照】，跳转至【拍照界面】</li>
+                        <li>点击【从相机选择】，跳转至【从相机选择界面】</li>
+                        <li>点击【保存图片】，可保存当前图片</li>
+                        <li>点击【取消】，关闭弹框</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="名字设置界面">
+                <div>
+                    <pre><code>名字设置界面</code></pre>
+                    <ol>
+                        <li>输入长度1-12位</li>
+                        <li>点击【确定】，网络请求成功后更新会话消息</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="我的二维码界面">
+                <div>
+                    <pre><code>我的二维码界面</code></pre>
+                    <ol>
+                        <li>点击【更多】，可选择附属操作</li>
+                        <li>点击【换个样式】可切换二维码背景色，静默网络保存</li>
+                        <li>点击【保存图片】，可保存当前图片</li>
+                        <li>点击【扫描二维码】，跳转至【扫一扫界面】</li>
+                        <li>点击【重制二维码】，二次确认后网络请求重置二维码</li>
+                        <li>点击【取消】，关闭弹框</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="更多设置界面">
+                <div>
+                    <pre><code>更多设置界面</code></pre>
+                    <ol>
+                        <li>点击【修改手机号】，跳转至【修改手机号】</li>
+                        <li>点击【性别】，弹出【性别选择框】</li>
+                        <li>点击【地区】，弹出【地址选择框】</li>
+                        <li>点击【个性签名】，跳转至【输入设置界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="我的地址界面">
+                <div>
+                    <pre><code>我的地址界面</code></pre>
+                    <ol>
+                        <li>点击【新增地址】，跳转至【设置地址界面】</li>
+                        <li>点击【地址信息】，跳转至【设置地址界面】</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="本机设置模块">
+        <h3 id="_5"><a name="content-_5" href="#_5" aria-hidden="true"></a>本机设置</h3>
+        <ul>
+            <li class="本机设置">
+                <div>
+                    <pre><code>本机设置</code></pre>
+                    <ol>
+                        <li>消息提醒方式，震动、声音、静默</li>
+                        <li>点击【隐私】，跳转至【隐私设置界面】</li>
+                        <li>点击【通用】，跳转至【通用设置界面】</li>
+                        <li>点击【帮助】，跳转至【帮助界面】</li>
+                        <li>点击【关于】，跳转至【关于界面】</li>
+                        <li>点击【退出登录】，调用退出登录事件</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="隐私设置界面">
+                <div>
+                    <pre><code>隐私设置界面</code></pre>
+                    <ol>
+                        <li>加我好友时需要验证</li>
+                        <li>拉我进群时需要验证</li>
+                        <li>点击【添加我的方式】，跳转至【添加我的方式界面】</li>
+                        <li>朋友圈提示选择</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="通用设置界面">
+                <div>
+                    <pre><code>通用设置界面</code></pre>
+                    <ol>
+                        <li>点击【语音设置】，跳转至【语音设置界面】</li>
+                        <li>点击【聊天背景】，跳转至【图片选择界面】</li>
+                        <li>点击【清空聊天记录】，二次确认后网络请求清空聊天记录</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="添加我的方式界面">
+                <div>
+                    <pre><code>添加我的方式界面</code></pre>
+                    <ol>
+                        <li>手机号、用户名、扫码、验证信息</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="语音设置界面">
+                <div>
+                    <pre><code>语音设置界面</code></pre>
+                    <ol>
+                        <li>音量、声音</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="帮助界面">
+                <div>
+                    <pre><code>帮助界面</code></pre>
+                    <ol>
+                        <li>点击【使用说明】，跳转至【引导页界面】</li>
+                        <li>点击【帮助】，跳转至【聊天界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="关于界面">
+                <div>
+                    <pre><code>关于界面</code></pre>
+                    <ol>
+                        <li>显示版本号、手机型号、用户协议、版权信息、app下载地址</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="聊天模块">
+        <h3 id="_6"><a name="content-_6" href="#_6" aria-hidden="true"></a>聊天模块</h3>
+        <ul>
+            <li class="好友聊天界面">
+                <div>
+                    <pre><code>聊天界面</code></pre>
+                    <ol>
+                        <li>可下拉获取更对聊天记录</li>
+                        <li>可发送语音、文字、图片信息</li>
+                        <li>点击更多可查看详细信息</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="小幕聊天界面">
+                <div>
+                    <pre><code>小幕聊天界面</code></pre>
+                    <ol>
+                        <li>可下拉获取更对聊天记录</li>
+                        <li>可发送语音、文字、图片信息</li>
+                        <li>点击更多可查看详细信息</li>
+                        <li>可智能获取笑话、新闻、故事等</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="选择好友聊天界面">
+                <div>
+                    <pre><code>选择好友聊天界面</code></pre>
+                    <ol>
+                        <li>网络查询最近聊天记录并显示</li>
+                        <li>可选择多选模式</li>
+                        <li>点击【好友项】，二次确认后发送信息</li>
+                        <li>点击【创建新的聊天】，跳转至【选择联系人界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="选择联系人界面">
+                <div>
+                    <pre><code>选择联系人界面</code></pre>
+                    <ol>
+                        <li>可多选模式</li>
+                        <li>网络查询通讯录好友</li>
+                        <li>点击【搜索】，可在当前界面网络请求搜索好友或群聊</li>
+                        <li>点击【选择群聊】，跳转至【群聊界面】</li>
+                        <li>点击【好友项】，即为选中该好友</li>
+                        <li>点击【完成】，根据type二次确认后发送信息 或 跳转至【聊天界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="群聊界面">
+                <div>
+                    <pre><code>群聊界面</code></pre>
+                    <ol>
+                        <li>可多选模式</li>
+                        <li>点击【群聊项】，即为选中该群聊</li>
+                        <li>点击【完成】，根据type二次确认后发送信息 或 跳转至【聊天界面】</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="好友模块">
+        <h3 id="_7"><a name="content-_7" href="#_7" aria-hidden="true"></a>好友模块</h3>
+        <ul>
+            <li class="添加好友界面">
+                <div>
+                    <pre><code>添加好友界面</code></pre>
+                    <ol>
+                        <li>点击【搜索】，跳转至【搜一搜界面】</li>
+                        <li>点击【我的微信号】，可显示我的微信号二维码弹框</li>
+                        <li>点击【雷达加好友】，跳转至【雷达加好友界面】</li>
+                        <li>点击【面对面建群】，跳转至【面对面建群界面】</li>
+                        <li>点击【扫一扫】，跳转至【扫一扫界面】</li>
+                        <li>点击【手机联系人】，跳转至【手机联系人界面】</li>
+                        <li>点击【公众号】，跳转至【搜一搜界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="雷达加好友界面">
+                <div>
+                    <pre><code>雷达加好友界面</code></pre>
+                    <ol>
+                        <li>显示雷达搜索动画</li>
+                        <li>搜索到信息后，跳转至【好友资料界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="面对面建群界面">
+                <div>
+                    <pre><code>面对面建群界面</code></pre>
+                    <ol>
+                        <li>和身边的好友输入同样的4个数字，可进入同一个群</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="手机联系人界面">
+                <div>
+                    <pre><code>手机联系人界面</code></pre>
+                    <ol>
+                        <li>显示手机联系人</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="好友资料界面">
+                <div>
+                    <pre><code>好友资料界面</code></pre>
+                    <ol>
+                        <li>点击【头像】，可显示好友头像弹框</li>
+                        <li>点击【发消息】，跳转至【聊天界面】</li>
+                        <li>点击【更多】，跳转至【好友资料设置界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="好友资料设置界面">
+                <div>
+                    <pre><code>好友资料设置界面</code></pre>
+                    <ol>
+                        <li>点击【设置备注和标签】，跳转至【设置备注和标签界面】</li>
+                        <li>点击【推荐给好友】，跳转至【选择好友聊天界面】</li>
+                        <li>可设置为星标朋友，静默网络请求</li>
+                        <li>可设置为不让他看我的朋友圈，静默网络请求</li>
+                        <li>可设置为不看他的朋友圈，静默网络请求</li>
+                        <li>可加入黑名单，静默网络请求</li>
+                        <li>可投诉，跳转至【投诉界面】</li>
+                        <li>可删除该好友，二次确认后网络请求删除</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="设置备注和标签界面">
+                <div>
+                    <pre><code>设置备注和标签界面</code></pre>
+                    <ol>
+                        <li>备注名1-12位</li>
+                        <li>点击【标签】，跳转至【标签界面】</li>
+                        <li>电话号码11位</li>
+                        <li>描述0-100位</li>
+                        <li>备注名1-12位</li>
+                        <li>点击【添加图片】，跳转至【添加图片界面】</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="投诉界面">
+                <div>
+                    <pre><code>投诉界面</code></pre>
+                    <ol>
+                        <li>选择投诉原因并二次确认后网络请求该投诉</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="群聊资料界面">
+                <div>
+                    <pre><code>群聊资料界面</code></pre>
+                    <ol>
+                        <li>网络请求所有群成员信息并显示</li>
+                        <li>可增加并邀请好友加入该群</li>
+                        <li>点击【群聊名称】，跳转至【输入设置界面】</li>
+                        <li>点击【我的本群昵称】，跳转至【输入设置界面】</li>
+                        <li>点击【群二维码】，跳转至【二维码界面】</li>
+                        <li>点击【群公告】，跳转至【群公告界面】</li>
+                        <li>点击【投诉】，跳转至【投诉界面】</li>
+                        <li>点击【清空聊天记录】，二次确认后可清空该群聊天记录</li>
+                        <li>点击【删除并退出】，二次确认后可删除并退出该群</li>
+                        <li>可设置消息免打扰、置顶聊天、保存到通讯录、显示群成员昵称操作</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="通用模块">
+        <h3 id="_8"><a name="content-_9" href="#_8" aria-hidden="true"></a>通用界面</h3>
+        <ul>
+            <li class="扫一扫界面">
+                <div>
+                    <pre><code>扫一扫界面</code></pre>
+                    <ol>
+                        <li>可识别好友名片、群名片、其它信息</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="摇一摇界面">
+                <div>
+                    <pre><code>摇一摇界面</code></pre>
+                    <ol>
+                        <li>可识别一分钟内同时摇一摇的人</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="搜一搜界面">
+                <div>
+                    <pre><code>搜一搜界面</code></pre>
+                    <ol>
+                        <li>可搜索好友、群、新闻、天气、笑话等</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="输入设置界面">
+                <div>
+                    <pre><code>输入设置界面</code></pre>
+                    <ol>
+                        <li>可根据type选择可输入内容和限制</li>
+                        <li>点击完成将信息返回值上个界面</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="选择图片界面">
+                <div>
+                    <pre><code>选择图片界面</code></pre>
+                    <ol>
+                        <li>可根据type选择是否显示相机</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

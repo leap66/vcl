@@ -1,11 +1,21 @@
 <resources>
 
-   <!-- Base application theme. -->
-   <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-      <!-- Customize your theme here. -->
-      <item name="colorPrimary">@color/colorPrimary</item>
-      <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-      <item name="colorAccent">@color/colorAccent</item>
+   <!--Dialog 从下至上-->
+   <style name="animation_bottom_rising" parent="@android:style/Animation">
+      <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+      <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
    </style>
 
+   <style name="alert_dialog" parent="style_dialog" />
+
+   <!--更新进度条-->
+   <style name="update_progressbar" parent="@android:style/Widget.ProgressBar.Horizontal">
+      <item name="android:maxHeight">50dip</item>
+      <item name="android:minHeight">8dip</item>
+      <item name="android:indeterminateOnly">false</item>
+      <item name="android:indeterminateDrawable">
+         @android:drawable/progress_indeterminate_horizontal
+      </item>
+      <item name="android:progressDrawable">@drawable/progress_update</item>
+   </style>
 </resources>

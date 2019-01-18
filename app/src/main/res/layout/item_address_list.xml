@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <data>
+
+      <variable
+         name="item"
+         type="com.grade.vcl.model.BUcn" />
+
+      <variable
+         name="presenter"
+         type="com.grade.vcl.widget.AddressPickerDialog.Presenter" />
+   </data>
+
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center_vertical"
+      android:onClick="@{()->presenter.onItem(item)}"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp">
+
+      <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:ellipsize="end"
+         android:maxLines="1"
+         android:text="@{item.name}"
+         android:textColor="@{item.newUcn?@color/lipstick:@color/charcoalGrey}"
+         android:textSize="14sp" />
+   </LinearLayout>
+</layout>
