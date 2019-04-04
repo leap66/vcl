@@ -29,6 +29,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // 阿里云推送
     implementation 'com.aliyun.ams:alicloud-android-push:3.1.4'
+    //aspectj
+    implementation 'org.aspectj:aspectjrt:1.8.13'
     implementation 'com.github.leapTrace:unit:0.2'
 }
 
